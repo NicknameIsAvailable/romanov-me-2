@@ -1,3 +1,5 @@
 export * from "./project"
 export * from "./customer"
 export * from "./base"
+export * from "./link"
+export * from "./tag"

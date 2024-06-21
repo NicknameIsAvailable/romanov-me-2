@@ -1,19 +1,36 @@
 import {IProjectAPI} from "./model";
 import {db} from "@/shared/app-write";
 import {COLLECTION_PROJECTS, DB_ID} from "@/shared/contants";
-import {Models, Query} from "appwrite";
+import { IProject } from "@/shared/types";
+import {Query} from "appwrite";
 
 export const ProjectsApi: IProjectAPI = {
-    getAll: async () => {
-        const response = await db.listDocuments(DB_ID, COLLECTION_PROJECTS);
-        const data: Models.Document[] = response.documents;
-        return data;
+    async getAll() {
+        try {
+            const response = await db.listDocuments(DB_ID, COLLECTION_PROJECTS);
+            return response.documents as unknown[] as IProject[];
+        } catch (e) {
+            console.error(e)
+        }
     },
-    getById: async (id: string) => {
-        const response = await db.listDocuments(DB_ID, COLLECTION_PROJECTS, [
-            Query.equal("$id", id)
-        ]);
-        const data: Models.Document[] = response.documents;
-        return data;
+    async getByType(type) {
+        try {
+            const response = await db.listDocuments(DB_ID, COLLECTION_PROJECTS, [
+                Query.equal("type", type)
+            ]);
+            return response.documents as unknown[] as IProject[];
+        } catch (e) {
+            console.error(e)
+        }
+    },
+    async getById(id: string) {
+        try {
+            const response = await db.listDocuments(DB_ID, COLLECTION_PROJECTS, [
+                Query.equal("$id", id)
+            ]);
+            return response.documents[0] as unknown as IProject;
+        } catch (e) {
+            console.error(e)
+        }
     }
 }
