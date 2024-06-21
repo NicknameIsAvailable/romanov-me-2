@@ -28,6 +28,7 @@ export const ProjectsApi: IProjectAPI = {
             const response = await db.listDocuments(DB_ID, COLLECTION_PROJECTS, [
                 Query.equal("$id", id)
             ]);
+            console.log(21345, response.documents)
             return response.documents[0] as unknown as IProject;
         } catch (e) {
             console.error(e)

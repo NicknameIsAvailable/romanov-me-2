@@ -11,8 +11,6 @@ export const ProjectList: FC<IProjectsListProps> = async ({ type }) => {
     }
     const projects = await getData(type);
 
-    console.log(projects)
-
     return (
         <div className="grid grid-cols-3 gap-4">
             {projects?.map(project => <ProjectCard key={project.$id} data={project}/>)}
