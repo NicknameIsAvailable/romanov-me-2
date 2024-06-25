@@ -47,7 +47,7 @@ export const Skills = async () => {
             <div className="relative z-10">
                 <CardContent className="mt-6 container mx-auto">
                     <h3 className="z-10 text-4xl font-bold">Их очень много, вот самое главное</h3>
-                    <div className="z-10 grid grid-cols-3 gap-4 mt-4">
+                    <div className="z-10 grid md:grid-cols-3 sm:grid-cols-2 gap-4 mt-4">
                         {skills?.map((skill, index) =>
                             <SkillCard data={skill} key={index} />
                         )}
