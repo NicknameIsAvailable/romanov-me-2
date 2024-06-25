@@ -1,5 +1,6 @@
 import { TProjectType } from "@/shared/types";
 
 export interface IProjectsListProps {
-    type?: TProjectType
+    type?: TProjectType;
+    length?: number;
 }

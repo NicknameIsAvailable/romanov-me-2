@@ -1,6 +1,6 @@
 import { db } from "@/shared/app-write";
 import { IOrderAPI } from "./model";
-import { COLLECTION_ORDERS, DB_ID } from "@/shared/contants";
+import { COLLECTION_ORDERS, DB_ID } from "@/shared/constants";
 import { ID } from "appwrite";
 import { IOrder } from "@/shared/types/order";
 

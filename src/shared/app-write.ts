@@ -1,5 +1,5 @@
 import {Client, Databases} from 'appwrite';
-import {APP_WRITE_ID, APP_WRITE_URL} from "@/shared/contants";
+import {APP_WRITE_ID, APP_WRITE_URL} from "@/shared/constants";
 const client = new Client();
 
 client

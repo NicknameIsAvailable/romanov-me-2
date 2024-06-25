@@ -1,11 +1,9 @@
 import React from 'react';
-import {ProjectList} from "@/widgets/projects";
+import { HomePage } from '@/views/home';
 
 const Page = async () => {
     return (
-        <div className="container mx-auto">
-            <ProjectList />
-        </div>
+        <HomePage />
     );
 };
 

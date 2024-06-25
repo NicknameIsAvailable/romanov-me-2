@@ -1,6 +1,6 @@
 import { db } from "@/shared/app-write";
 import { ICustomerAPI } from "./model";
-import { COLLECTION_CUSTOMERS, DB_ID } from "@/shared/contants";
+import { COLLECTION_CUSTOMERS, DB_ID } from "@/shared/constants";
 import { Query } from "appwrite";
 import { ICustomer } from "@/shared/types";
 

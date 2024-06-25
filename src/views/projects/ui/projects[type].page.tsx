@@ -10,7 +10,7 @@ export const ProjectTypePage = () => {
     ]
 
     return types.map(type => 
-        <TabsContent value={type}>
+        <TabsContent value={type} key={type}>
             <ProjectList type={type} />
         </TabsContent>
     );
