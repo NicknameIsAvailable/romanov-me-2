@@ -7,7 +7,7 @@ export const HomePage = () => {
             <Start />
             <AboutMe />
             <Skills />
-            {/* <Projects /> */}
+            <Projects />
             <GetInTouch />
         </>
     )

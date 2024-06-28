@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { IProjectTypeIdPageProps } from '../model';
+import { Badge } from '@/shared/ui/badge';
 
 export const ProjectTypeIdPage: FC<IProjectTypeIdPageProps> = async ({ params }) => {
     const {id} = params;
@@ -42,16 +43,16 @@ export const ProjectTypeIdPage: FC<IProjectTypeIdPageProps> = async ({ params })
                             <CarouselPrevious />
                             <CarouselNext />
                         </Carousel>
-                        <div className="flex flex-row">
-                            {/* {data?.projectTags.map(tag => 
-                                <Badge>
+                        <div className="flex flex-row gap-4">
+                            {data?.projectTags.map(tag => 
+                                <Badge key={tag.$id}>
                                     {tag.name}
                                 </Badge>
-                            )} */}
+                            )}
                         </div>
                     </div>
                     <div className="flex flex-col gap-4">
-                        <CustomerBadge data={data?.customer[0]}/>
+                        {data?.customer[0] && <CustomerBadge data={data?.customer[0]}/>}
                         <p className="text-xl">
                             {data?.description}
                         </p>
@@ -61,12 +62,15 @@ export const ProjectTypeIdPage: FC<IProjectTypeIdPageProps> = async ({ params })
                                     Превью
                                 </Button>
                             </Link>
-                            <Link href={data?.repo_url || ""} className='flex-1'>
-                                <Button className='w-full'>
-                                    <GithubIcon className='mr-2' size={16}/>
-                                    Репозиторий
-                                </Button>
-                            </Link>
+                            {data?.repo_url &&
+                                <Link href={data?.repo_url || ""} className='flex-1'>
+                                    <Button className='w-full'>
+                                        <GithubIcon className='mr-2' size={16}/>
+                                        Репозиторий
+                                    </Button>
+                                </Link>
+                            }
+                            
                         </div>
                     </div>
                 </div>

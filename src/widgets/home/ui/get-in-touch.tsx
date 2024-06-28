@@ -12,6 +12,7 @@ import { Dock, DockIcon } from "@/shared/magicui/dock"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/shared/ui/tooltip"
 import LinearGradient from "@/shared/magicui/linear-gradient"
 import { GetInTouchForm } from "./get-in-touch.form"
+import Link from "next/link"
 
 export const GetInTouch = () => {
     const links: ILink[] = [
@@ -27,7 +28,7 @@ export const GetInTouch = () => {
         },
         {
             name: "Мой HH",
-            url: "https://github.com/NicknameIsAvailable",
+            url: "https://spb.hh.ru/resume/aa898593ff0d4e1c4b0039ed1f5349574d5555",
             icon: <Image src={HHIcon} alt="HH"/>
         },
         {
@@ -41,7 +42,7 @@ export const GetInTouch = () => {
         <MagicCard className="mt-10 relative overflow-hidden z-0 rounded-b-none">
             <MagicContainer className="z-10 flex flex-col gap-32 items-center">
                 <SparklesText text="Контакты" className="text-center"/>
-                <Card className="w-96">
+                <Card className="w-96 z-10">
                     <CardHeader>
                         <h3 className="text-xl font-bold">
                             Оставить заявку
@@ -49,18 +50,20 @@ export const GetInTouch = () => {
                     </CardHeader>
                     <GetInTouchForm />
                 </Card>
-                <Dock>
+                <Dock className="z-10">
                     {links.map((link, index) => (
-                        <DockIcon key={index}>
-                            <Tooltip>
-                                <TooltipTrigger asChild>
-                                        {link.icon}
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    {link.name}
-                                </TooltipContent>
-                            </Tooltip>
-                        </DockIcon>
+                            <DockIcon  key={index}>
+                                <Link href={link.url}>
+                                    <Tooltip>
+                                        <TooltipTrigger asChild>
+                                                {link.icon}
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                            {link.name}
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </Link>
+                            </DockIcon>
                     ))}
                 </Dock>
             </MagicContainer>

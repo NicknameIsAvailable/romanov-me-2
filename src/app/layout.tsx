@@ -4,6 +4,7 @@ import "./globals.css";
 import {TooltipProvider} from "@/shared/ui/tooltip";
 import {ThemeProvider} from "@/widgets/theme-provider";
 import Particles from "@/shared/magicui/particles";
+import { Toaster } from "@/shared/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
                   refresh
               />
             {children}
+            <Toaster />
           </TooltipProvider>
       </ThemeProvider>
       </body>
