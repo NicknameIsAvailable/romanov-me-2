@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC, ReactNode } from 'react';
 
-const Layout = () => {
+const Layout: FC<{ children: ReactNode }> = ({ children }) => {
     return (
-        <div>
-            
-        </div>
+        <main className='container mx-auto'>
+            {children}
+        </main>
     );
 };
 

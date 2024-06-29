@@ -57,7 +57,9 @@ export const Skills = async () => {
             <div
                 className="absolute z-1 top-0 left-0 flex h-full w-full items-center justify-center overflow-hidden rounded-lg">
                 <LinearGradient />
+                <div className="scale-150">
                 <IconCloud iconSlugs={slugs}/>
+                </div>
             </div>
         </MagicCard>
     );
