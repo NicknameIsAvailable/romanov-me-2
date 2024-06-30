@@ -18,7 +18,7 @@ export const CustomersAPI: ICustomerAPI = {
             const response = await db.listDocuments(DB_ID, COLLECTION_CUSTOMERS, [
                 Query.equal("$id", id)
             ]);
-            return response.documents as unknown[] as ICustomer[]
+            return response.documents[0] as unknown as ICustomer
         } catch (e) {
             console.error(e)
         }

@@ -9,7 +9,7 @@ export const CustomersPage = async () => {
             <h1 className="text-center text-5xl font-bold py-4">Заказчики</h1>
             <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
                 {customers?.map(customer => 
-                    <CustomerBadge data={customer}/>
+                    <CustomerBadge key={customer.$id} data={customer}/>
                 )}
             </div>
         </div>
