@@ -4,9 +4,11 @@ import ShinyButton from "@/shared/magicui/shiny-button"
 import SparklesText from "@/shared/magicui/sparkles-text"
 import { ILink } from "@/shared/types"
 import { AspectRatio } from "@/shared/ui/aspect-ratio"
+import { Button } from "@/shared/ui/button"
 import { ModeToggle } from "@/widgets/mode-toggle"
 import { GithubIcon } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export const Start = () => {
     const links: ILink[] = [
@@ -39,7 +41,12 @@ export const Start = () => {
                     </h3>
                     <span className="text-base font-medium"> Всмысле вы меня не знаете?.. </span>
                     <div className="flex gap-4">
-                        <ShinyButton text="Узнать"/>
+                        <Link href="#about-me">
+                            <Button>Узнать</Button>
+                        </Link>
+                        {/* <Link href="/blog">
+                            <ShinyButton text="Супрематическая дурка"/>
+                        </Link> */}
                         <ModeToggle />
                     </div>
                 </div>

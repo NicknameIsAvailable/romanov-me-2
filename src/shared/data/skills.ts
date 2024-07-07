@@ -44,7 +44,7 @@ export const skills: ISkill[] = [
         name: "Zustand",
         description: "Удобный, легковесный стейт-менеджер, который я использую в большинстве своих проектов",
         icon: ZustandLogo,
-        url: "https://www.typescriptlang.org/"
+        url: "https://zustand-demo.pmnd.rs/"
     },
     {
         name: "Mobx",

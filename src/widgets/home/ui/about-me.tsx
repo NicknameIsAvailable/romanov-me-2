@@ -6,7 +6,7 @@ export const AboutMe = () => {
     const startCodingDate = new Date(2021, 5, 1)
 
     return (
-        <section className="container mx-auto min-h-screen">
+        <section className="container mx-auto min-h-screen" id="about-me">
             <h1 className="text-primary text-5xl font-bold text-center">
                 Обо мне
             </h1>
